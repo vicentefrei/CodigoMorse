@@ -5,7 +5,6 @@ public class Main {
         MorseTree morseTree = new MorseTree();
         Scanner scanner = new Scanner(System.in);
 
-        // Menu de opções para o usuário
         while (true) {
             System.out.println("Escolha uma opção:");
             System.out.println("1. Codificar palavra");
@@ -13,7 +12,7 @@ public class Main {
             System.out.println("3. Imprimir Árvore Morse");
             System.out.println("4. Sair");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Consumir a nova linha
+            scanner.nextLine();  
 
             switch (opcao) {
                 case 1:
