@@ -1,7 +1,7 @@
 class Node {
     char character;
-    Node left;  // Representa o ponto '.'
-    Node right; // Representa o traço '-'
+    Node left;  
+    Node right; 
 
     public Node(char character) {
         this.character = character;
