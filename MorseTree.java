@@ -3,16 +3,16 @@ import java.util.Map;
 
 public class MorseTree {
     private Node root;
-    private Map<Character, String> morseCodeMap;  // Mapeamento do caractere para código morse
+    private Map<Character, String> morseCodeMap; 
 
     public MorseTree() {
-        root = new Node(' ');  // Raiz vazia
+        root = new Node(' '); 
         morseCodeMap = new HashMap<>();
-        buildMorseTree();      // Constrói a árvore binária
-        buildMorseCodeMap();   // Constrói o mapa de código morse para codificação
+        buildMorseTree();      
+        buildMorseCodeMap(); 
     }
 
-    // Método para construir a árvore binária morse
+
     private void buildMorseTree() {
         insert(".", 'E');
         insert("-", 'T');
@@ -42,7 +42,7 @@ public class MorseTree {
         insert("--.-", 'Q');
     }
 
-    // Método para inserir um caractere com base no código morse
+   
     private void insert(String morseCode, char character) {
         Node current = root;
         for (char symbol : morseCode.toCharArray()) {
@@ -61,7 +61,6 @@ public class MorseTree {
         current.character = character;
     }
 
-    // Método para construir o mapa de codificação morse para caracteres
     private void buildMorseCodeMap() {
         morseCodeMap.put('E', ".");
         morseCodeMap.put('T', "-");
@@ -91,7 +90,7 @@ public class MorseTree {
         morseCodeMap.put('Q', "--.-");
     }
 
-    // Método para decodificar uma palavra em morse para texto
+
     public String decode(String morseSequence) {
         String[] morseLetters = morseSequence.split(" ");
         StringBuilder decodedWord = new StringBuilder();
@@ -111,7 +110,6 @@ public class MorseTree {
         return decodedWord.toString();
     }
 
-    // Método para codificar uma palavra em texto para código morse
     public String encode(String word) {
         StringBuilder morseSequence = new StringBuilder();
         for (char letter : word.toUpperCase().toCharArray()) {
@@ -122,12 +120,11 @@ public class MorseTree {
         return morseSequence.toString().trim();
     }
 
-    // Método para imprimir a árvore binária no formato visual (letra) / \ (letra) (letra)
     public void printTree() {
         printTree(root, "", true);
     }
 
-    // Método auxiliar para impressão recursiva da árvore com visualização em formato
+
     private void printTree(Node node, String prefix, boolean isTail) {
         if (node != null) {
             System.out.println(prefix + (isTail ? "└── " : "├── ") + "(" + node.character + ")");
@@ -138,7 +135,7 @@ public class MorseTree {
         }
     }
 
-    // Classe interna Node para construir a árvore
+
     private static class Node {
         char character;
         Node left, right;
